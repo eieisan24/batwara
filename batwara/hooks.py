@@ -7,7 +7,8 @@ app_license = "agpl-3.0"
 
 # Apps
 # ------------------
-
+# Export type annotations
+export_python_type_annotations = True
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page

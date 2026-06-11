@@ -30,7 +30,8 @@
    "in_list_view": 1,
    "label": "Amount",
    "non_negative": 1,
-   "options": "Currency"
+   "options": "Currency",
+   "reqd": 1
   },
   {
    "fieldname": "currency",
@@ -45,7 +46,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-06-11 11:22:06.167841",
+ "modified": "2026-06-11 14:30:30.027667",
  "modified_by": "Administrator",
  "module": "Batwara",
  "name": "Expense Split",

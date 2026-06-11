@@ -1,7 +1,7 @@
 # Copyright (c) 2026, Build with Ei Ei San and Contributors
 # See license.txt
 
-# import frappe
+import frappe
 from frappe.tests import IntegrationTestCase
 
 
@@ -19,4 +19,21 @@ class IntegrationTestExpense(IntegrationTestCase):
 	Use this class for testing interactions between multiple components.
 	"""
 
-	pass
+	def test_equal_split_calculation(self):
+		test_expense = frappe.get_doc({
+			"doctype": "Expense",
+			"description":"test expense",
+			"paid_by": "friend1@email.com",
+			"amount": 2000,
+			"splits": [
+				{
+					"user":"friend1@email.com",
+				},
+				{
+					"user":"friend2@email.com",
+				}
+			]
+		}).insert()
+
+		self.assertEqual(test_expense.splits[0].amount, 1000)
+		self.assertEqual(test_expense.splits[1].amount, 1000)
